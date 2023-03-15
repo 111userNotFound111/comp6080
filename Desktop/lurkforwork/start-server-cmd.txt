@@ -1,0 +1,20 @@
+start backend server
+First time, Install npm at the backend directory:
+    npm install
+In terminal, at backend directory, type:
+    npm start
+use localhost 5005 to access backend API
+shows all API provided by backend
+
+start frontend server
+go to lurkforwork directory 
+    npm install --global http-server
+    npx http-server frontend -c 1 -p [port_number]
+
+reset backend database 
+    npm run reset
+
+
+to move back to previous directory:
+    cd ..
+
