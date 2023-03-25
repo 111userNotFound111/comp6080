@@ -1,3 +1,5 @@
+<!-- Use for testing only -->
+
 <!DOCTYPE html>
 <html>
 
@@ -12,14 +14,13 @@
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
     <link rel="icon" href="img/icon.ico">
-    <!-- #0766c5 -->
-
-
 
     <link rel="stylesheet" media="screen" href="styles/global.css" />
 </head>
 
 <body class="d-flex flex-column h-100">
+
+
     <!-- This is an example app structure, you can modify this as much as you choose -->
     <header>
         <div class="container">
@@ -28,48 +29,445 @@
                 <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
                     <img src="img/LurkForWork.jpg" class="bi me-2" width="150" height="32" role="img">
                 </a>
-                <div>
+                <div id="header-section">
                     <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 ">
-                        <li><a href="#" class="nav-link px-2 link-dark "><i
+                        <li><a id="home" class="nav-link px-2 link-dark "><i
                                     class="fa fa-home d-flex justify-content-center"></i>Home</a></li>
-                        <li><a href="#" class="nav-link px-2 link-dark"><i
-                                    class="fa-solid fa-network-wired d-flex justify-content-center"></i>My Network</a></li>
-                        <li><a href="#" class="nav-link px-2 link-dark"><i
-                                    class="fa-solid fa-person-digging d-flex justify-content-center"></i>Jobs</a></li>
-                        <li><a href="#" class="nav-link px-2 link-dark"><i
-                                    class="fa-solid fa-envelope d-flex justify-content-center"></i>Messaging</a></li>
-                        <li><a href="#" class="nav-link px-2 link-dark"><i
-                                    class="fa-solid fa-bullhorn d-flex justify-content-center"></i>Notifications</a></li>
-                        <li class="nav-item dropdown"><a href="#" class="nav-link px-2 link-dark dropdown-toggle role="
-                                button" data-bs-toggle="dropdown" aria-expanded="false"><i
-                                    class="fa-solid fa-address-card d-flex justify-content-center"></i>Me</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Setting</a></li>
-                                <li><a class="dropdown-item" href="#">Help</a></li>
-                                <li><a class="dropdown-item" href="#">Sign out</a></li>
-                            </ul>
+                        <li><a id='searchSomeone' class="nav-link px-2 link-dark"><i
+                                    class="fa-solid fa-magnifying-glass d-flex justify-content-center"></i>Search</a>
+                        </li>
+                        <li><a id="postJobs-btn" class="nav-link px-2 link-dark"><i
+                                    class="fa-solid fa-person-digging d-flex justify-content-center"></i>Post Jobs</a>
+                        </li>
+                        <!-- <li><a class="nav-link px-2 link-dark"><i
+                                    class="fa-solid fa-envelope d-flex justify-content-center"></i>Messaging</a>
+                        </li> -->
+                        <li><a id="my-profile" class="nav-link px-2 link-dark"><i
+                                    class="fa-solid fa-bullhorn d-flex justify-content-center"></i>My profile</a>
+                        </li>
+                        <li><a id="logout-button" class="nav-link px-2 link-dark"><i
+                                    class="fa-solid fa-door-open d-flex justify-content-center"></i>Log out</a>
                         </li>
                     </ul>
                 </div>
-                
 
-                <!-- <div class="col-md-3 text-end">
-                <button type="button" class="btn btn-outline-primary me-2">Login</button>
-                <button type="button" class="btn btn-primary">Sign-up</button>
-              </div> -->
             </header>
         </div>
     </header>
+    <div id="loader-container">
+        <div class="loader"></div>
+    </div>
+    <div id="page">
+        <div class="align-items-center  justify-content-center h-100">
 
 
-    <main role="main" class="flex-shrink-0">
-        <!-- app goes here -->
+            <main role="main" class="flex-shrink-0">
+                <!--–––––––––––––––––––––––––––––––––––––––––––––––––– app goes here ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––-->
+                <!-- 
+                logged out :
+                frontpage, signIn, registration, warningModal
+                logged in :
+                main , profile , notificationModal 
+            -->
+
+                <!--–––––––––––––––––––––––––––––––––––––––––––––––––– Logged Out ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––-->
+                <div id="logged-out">
+                    <!-- popup window -->
+                    <!--––––––––––––– sign in ––––––––––––––––-->
+                    <div id="signIn" ;>
+                        <div class="modal modal-signin position-static d-block bg-secondary py-5" tabindex="-1"
+                            role="dialog" id="modalSignin">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content rounded-4 shadow">
+                                    <div class="modal-header p-5 pb-4 border-bottom-0">
+
+                                        <h1 class="fw-bold mb-0 fs-2">Sign in</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body p-5 pt-0">
+                                        <form class="">
+                                            <div class="form-floating mb-3">
+                                                <input type="email" class="form-control rounded-3" id="signIn-email"
+                                                    placeholder="name@example.com">
+                                                <label for="floatingInput">Email address</label>
+                                            </div>
+                                            <div class="form-floating mb-3">
+                                                <input type="password" class="form-control rounded-3"
+                                                    id="signIn-password" placeholder="Password">
+                                                <label for="floatingPassword">Password</label>
+                                            </div>
+                                            <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" id="signIn-btn"
+                                                type="button">Sign
+                                                in</button>
+                                            <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" id="regist-btn"
+                                                type="button">Registration
+                                            </button>
+
+                                            <small class="text-muted">By clicking Sign in, you agree to the terms of
+                                                use.</small>
+
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--––––––––––––– registration ––––––––––––––––-->
+                    <div id="registration">
+                        <div class="modal modal-signin position-static d-block bg-secondary py-0" tabindex="-1"
+                            role="dialog" id="modalSignin">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content rounded-4 shadow">
+                                    <div class="modal-header p-5 pb-4 border-bottom-0">
+                                        <!-- <h1 class="modal-title fs-5" >Modal title</h1> -->
+                                        <h1 class="fw-bold mb-0 fs-2">Sign up for free</h1>
+                                        <button type="button" id="regist-close-btn" class="btn-close"
+                                            data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body p-5 pt-0">
+                                        <form class="">
+                                            <div class="form-floating mb-3">
+                                                <input type="email" class="form-control rounded-3"
+                                                    id="registration-email" placeholder="name@example.com">
+                                                <label for="floatingInput">Email address</label>
+                                            </div>
+                                            <div class="form-floating mb-3">
+                                                <input type="email" class="form-control rounded-3"
+                                                    id="registration-name" placeholder="Your Name">
+                                                <label for="floatingInput">Your Name</label>
+                                            </div>
+                                            <div class="form-floating mb-3">
+                                                <input type="password" class="form-control rounded-3"
+                                                    id="registration-password" placeholder="Password">
+                                                <label for="floatingPassword">Password</label>
+                                            </div>
+                                            <div class="form-floating mb-3">
+                                                <input type="password" class="form-control rounded-3"
+                                                    id="confirm-password" placeholder="Password">
+                                                <label for="floatingPassword">Comfirm password</label>
+                                            </div>
+
+                                            <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="button"
+                                                id="signUp-btn">Sign
+                                                up</button>
+
+                                            <small class="text-muted">By clicking Sign up, you agree to the terms of
+                                                use.</small>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- loading -->
+
+                <!--–––––––––––––––––––––––––––––––––––––––––––––––––– Logged In ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––-->
+                <div id="logged-in">
+                    <div id="mainLayer" class="container">
+                        <div class="row" id="master-page">
+
+                            <div class="sidebar " id="sidebar-l"> side bar </div>
+
+                            <div class="card-container container" id="middle-main">
+                                <div id="main-container" class="row align-items-start">
+                                    <div class="container">
+                                        <form class="job-post">
+                                            <div class="mb-3">
+                                                <label for="exampleFormControlInput1" class="form-label">Job
+                                                    Title</label>
+                                                <input type="text" class="form-control" id="postjob-name">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="exampleFormControlInput1" class="form-label">New Job Image
+                                                    (JPG, JPEG, PNG)</label>
+                                                <input type="file" name="imageName" class="form-control"
+                                                    accept="image/jpeg, image/png, image/jpg" id="postjob-image">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="exampleFormControlTextarea1" class="form-label">Job Start
+                                                    Date</label>
+                                                <input type="date" name="jobPost_date" class="form-control"
+                                                    id="postjob-date">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="exampleFormControlTextarea1" class="form-label">Job
+                                                    Description</label>
+                                                <textarea class="form-control" id="postjob-description"
+                                                    rows="3"></textarea>
+                                            </div>
+                                            <button type="button" id="postJob-btn" class="btn btn-primary">Post New
+                                                Job</button>
+                                        </form>
+                                    </div>
+
+                                    <hr class="separator">
+
+                                    <div id="jobList-container" class="container">
+                                        <div class="card">
+                                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg=="
+                                                class="card-img-top" alt="...">
+                                            <div class="card-0">
+                                                <h5 class="job-title">Card Placeholder</h5>
+                                                <p class="job-date">
+                                                    Date
+                                                </p>
+                                                <p class="job-description"> Fixed Example, can not interact</p>
+                                                <div class="d-flex ">
+                                                    <div id="like-btn" class="like p-2 cursor"><i
+                                                            class="fa fa-thumbs-o-up"></i><span>23
+                                                            Likes</span>
+                                                    </div>
+                                                    <div id="show_likes" class="p-2 cursor"> <span>(Show Likes)</span>
+                                                    </div>
+                                                    <div class="like p-2 cursor"><i
+                                                            class="fa fa-commenting-o"></i><span>Show Comment</span>
+                                                    </div>
+                                                </div>
+                                                <textarea class="card-comment">Enter Comments here...</textarea>
+                                                <a id="comment-btn" class="btn btn-primary">Comments</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="sidebar" id="sidebar-r"> side bar </div>
+                        </div>
+                    </div>
+
+                    <!--–––––––––––––––––––––––––––––––––––––––––––––––––– profile ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––-->
+
+                    <div id="profile">
+                        <div class="container" id="profile-container ">
+                            <div id="profile-row-setting" class="d-flex flex-col">
+                                <div class=" profile-col " id="profile-background-img">
+                                    <i id="button-for-change-profile" class="fa-solid fa-pen " type="button"></i>
+                                    <img id="profile-background-img" src="img/profile-background-img-default.png">
+                                </div>
+                                <img id="profile-img" src="img/default-profile-portrait.jpeg">
+                                <div id="profile-setting">
+                                    <div class="container">
+                                        <div class="profile-text row">
+                                            <div class="col">
+                                                <h1 id="profile-name">Mr mystery</h1>
+                                            </div>
+                                            <div class="col">
+                                                <h1 id="follow-btn"><i class="fa-solid fa-user-plus fa-beat nav-link"></i></h1>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+
+
+                                    <h3 class="profile-text" id="profile-email">I dont wanna show my email</h3>
+                                    <h3 class="profile-text">UID: <a id="profile-id"></a></h3>
+                                    <button type="button" class="btn btn-sm btn-outline-primary profile-text"
+                                        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                                        id="profile-show-followers">Show followers</button>
+                                    <br>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="profile-job-list">
+                            <!-- <div class="container d-flex flex-col" id="profile-jobs">
+                                <div class="container profile-jobs" id='profile-jobs-border'>
+                                    <div class="container row">
+                                        <div class="container col-8" id="profile_left_side">
+                                            <div class="profile-title-item">
+                                                <h1 class="profile-title">title</h1>
+    
+                                            </div>
+                                            <br class="profile-br">
+                                            <div class="profile-jobs-detail">
+                                                <p id="profile-jobs-start">Start</p>
+                                                <p id="profile-jobs-createdAt">createdAt</p>
+                                                <p id="profile-jobs-description">description</p>
+                                            </div>
+                                        </div>
+                                        <div class="container col-4" id="profile_right_side">
+                                            <div id="profile_jobs_img_div">
+                                                <img id="profile_jobs_img" src="img/LurkForWork.jpg">
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                </div>
+                            </div> -->
+                        </div>
+                   
+                    </div>
+
+
+                    <br>
+                    <br>
+                    <br>
+                </div>
+
+            </main>
+
+        </div>
 
 
 
-    </main>
 
 
+
+
+
+
+
+
+
+
+        <!-- Modal -->
+        <div class="modal fade border-3" id="warningModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="false">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Error Warning</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div id="error-msg" class="modal-body">
+                        ...
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- modal for profile -->
+        <div class="modal modal-lg fade" id="profileModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="false">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="edit-profile-btn">Edit Your profile</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div id="" class="modal-body">
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control rounded-3" id="edit-profile-name"
+                                placeholder="Your Name">
+                            <label for="floatingInput">Your Name</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="edit-profile-email"
+                                placeholder="name@example.com">
+                            <label for="floatingInput">Email address</label>
+                        </div>
+                        <label class="form-label">Image
+                            (JPG, JPEG, PNG)</label>
+                        <input type="file" name="imageName" class="form-control"
+                            accept="image/jpeg, image/png, image/jpg" id="edit-profile-image">
+                        <br>
+
+                        <div class="form-floating mb-3">
+                            <input type="password" class="form-control rounded-3" id="edit-profile-password"
+                                placeholder="Password">
+                            <label for="floatingPassword1">Password</label>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" id="edit-profile-submit">Save changes</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- job and comments  -->
+    <div class="modal fade" id="like-comment-Modal" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="like-comment-Modal-Label">Modal title</h5>
+                    <button type="button" id="like-comment-Modal-close" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div id="like-comment-body" class="modal-body">
+                    <!-- <ul id="comment-list" class="list-group">
+                        <li class="list-group-item"> <h7 class="comment-user-btn">User Name</h7> </li>
+                        <li class="list-group-item"> Comments </li>
+                    </ul> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- searchsomeone modal -->
+    <div class="modal fade" id="searchSomeoneModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Search someone</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="searchSomeoneInput" placeholder="Someone id:">
+                        <label for="floatingInput">Search by id</label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+                    <button type="button" class="btn btn-primary" id="searchSomeoneSubmit">Search</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+
+    <!-- post job modal  -->
+    <div class="modal fade" id="postJob-Modal" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="postJob-Modal-Label">Post A New Job</h5>
+                    <button type="button" id="postJob-Modal-close" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div id="postJob-body" class="modal-body">
+
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Job
+                            Title</label>
+                        <input type="text" class="form-control" id="postjob-modal-name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">New Job Image
+                            (JPG, JPEG, PNG)</label>
+                        <input type="file" name="imageName" class="form-control"
+                            accept="image/jpeg, image/png, image/jpg" id="postjob-modal-image">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Job Start
+                            Date</label>
+                        <input type="date" name="jobPost_date" class="form-control" id="postjob-modal-date">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Job
+                            Description</label>
+                        <textarea class="form-control" id="postjob-modal-description" rows="3"></textarea>
+                    </div>
+
+                    <button type="button" id="postjob-modal-btn" class="btn btn-primary">Post New
+                        Job</button>
+                    <div id="postjob-modal-warning">Please Fill Out All Sections</div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <footer class="footer mt-auto py-3 bg-light">
@@ -77,15 +475,13 @@
             <span class="text-muted">Copyright: Team Of FLUTTERATION 2023</span>
         </div>
     </footer>
-
+    <!-- change this line for the actual assignment, this is draft only -->
     <script type="module" src="src/main.js"></script>
-
+    <script type="module" src="src/helpers.js"></script>
     <script src="https://kit.fontawesome.com/c93deeb16c.js" crossorigin="anonymous"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+        integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous">
     </script>
-
 </body>
 
 </html>

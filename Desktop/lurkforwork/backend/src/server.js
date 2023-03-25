@@ -60,16 +60,11 @@ const authed = fn => async (req, res) => {
 
 app.post('/auth/login', catchErrors(async (req, res) => {
   const { email, password, } = req.body;
-
-  console.log(`backend register got ${email},${password}`)
   return res.json(await login(email, password));
 }));
 
 app.post('/auth/register', catchErrors(async (req, res) => {
   const { email, password, name, } = req.body;
-  
-  // printing from register frontend
-  console.log(`backend register got ${email},${password},${name}`)
   return res.json(await register(email, password, name));
 }));
 

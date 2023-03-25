@@ -1,109 +1,415 @@
 /* base styles, feel free to edit */
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    font-family: Arial;
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial;
 
 }
 
 .bd-placeholder-img {
-    font-size: 1.125rem;
-    text-anchor: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
   }
 
-  @media (min-width: 768px) {
-    .bd-placeholder-img-lg {
-      font-size: 3.5rem;
-    }
+}
+
+@media (max-width: 768px) {
+  .profile-text {
+    font-size: 1rem;
+  }
+}
+
+
+
+/* loader setting */
+#loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f3f2ed;
+  z-index: 9999;
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #3498db;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  position: fixed;
+  top: 40%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  animation: spin 2s linear infinite;
+}
+
+/* 定义loader旋转动画 */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
   }
 
-  .b-example-divider {
-    height: 3rem;
-    background-color: rgba(0, 0, 0, .1);
-    border: solid rgba(0, 0, 0, .15);
-    border-width: 1px 0;
-    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+  100% {
+    transform: rotate(360deg);
   }
+}
 
-  .b-example-vr {
-    flex-shrink: 0;
-    width: 1.5rem;
-    height: 100vh;
-  }
+.b-example-divider {
+  height: 3rem;
+  background-color: rgba(0, 0, 0, .1);
+  border: solid rgba(0, 0, 0, .15);
+  border-width: 1px 0;
+  box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+}
 
-  .bi {
-    vertical-align: -.125em;
-    fill: currentColor;
-  }
+.nav-link {
+  cursor: pointer;
+}
 
-  .nav-scroller {
-    position: relative;
-    z-index: 2;
-    height: 2.75rem;
-    overflow-y: hidden;
-  }
+.b-example-vr {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 100vh;
+}
 
-  .nav-scroller .nav {
-    display: flex;
-    flex-wrap: nowrap;
-    padding-bottom: 1rem;
-    margin-top: -1px;
-    overflow-x: auto;
-    text-align: center;
-    white-space: nowrap;
-    -webkit-overflow-scrolling: touch;
-  }
+.bi {
+  vertical-align: -.125em;
+  fill: currentColor;
+}
 
-  .hide{
-    display: none ;
-  }
+.nav-scroller {
+  position: relative;
+  z-index: 2;
+  height: 2.75rem;
+  overflow-y: hidden;
+}
 
-  /*–––––––––––––– the following is for popup windows ––––––––––––*/
-  .popup {
-    display: none;
-    position: fixed;
-    text-align: center;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-  }
+.nav-scroller .nav {
+  display: flex;
+  flex-wrap: nowrap;
+  padding-bottom: 1rem;
+  margin-top: -1px;
+  overflow-x: auto;
+  text-align: center;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
 
-  .popup-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 300px;
-    height: 200px;
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  }
+#header-section li:hover {
+  opacity: 0.6;
+}
 
-  .popup-content h1 {
-    margin-top: 0;
-  }
+/*–––––––––––––––– main page design ––––––––––––––––––––––*/
+/* Create three equal columns that floats next to each other */
+body {
+  background-color: #f3f2ee;
+}
 
-  .popup-content button {
-    margin-top: 20px;
-    width: 150px;
-    height: 50px;
-  }
+.job-post {
+  width: 100%;
+  background-color: #ffffff;
+  border-color: caccce;
+  margin-top: 10px;
+  border-width: 1.5px;
+  border-style: groove;
+  border-radius: 7px;
+  padding: 30px;
+}
 
-  .popup-content p {
-    color: red;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  /*–––––––––––––––– end of popup windows ––––––––––––––––––––––*/
+
+.separator {
+  margin-top: 20px;
+  margin-bottom: 10px
+}
+
+#middle-main {
+  width: 65%;
+}
+
+.sidebar {
+  width: 15%;
+  height: 80vh;
+  background-color: #ffffff;
+  border-color: caccce;
+  margin-top: 10px;
+  border-width: 1.5px;
+  border-style: groove;
+  border-radius: 5px;
+
+
+}
+
+.feed-container {
+  width: 90rem;
+  border-color: caccce;
+  margin-bottom: 10px;
+  border-width: 1.5px;
+  border-style: groove;
+  border-radius: 7px;
+}
+
+.card {
+  width: 100%;
+  background-color: #ffffff;
+  border-color: caccce;
+  margin-bottom: 10px;
+  border-width: 1.5px;
+  border-style: groove;
+  border-radius: 7px;
+  padding: 30px;
+}
+
+.card-0 {
+  margin-top: 20px;
+}
+
+
+
+.job-title {
+  font-family: monospace;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.job-userName:hover {
+  color: lightblue;
+}
+
+.job-date {
+  margin-left: 20px;
+}
+
+.job-description {
+  margin-top: 10px;
+  font-family: serif;
+}
+
+.time-stamp {
+  color: #808080;
+  font-size: 13px;
+}
+
+.card-comment-textarea {
+  width: 100%;
+  height: 100px;
+  text-align: left;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  white-space: pre-wrap;
+}
+
+.show-like-btn {
+  margin-left: -15px;
+}
+
+/* -----------------------------post job modal --------------------------------*/
+
+#postjob-modal-warning {
+  color: red;
+  display: none;
+}
+
+
+/* -----------------------------like modal --------------------------------*/
+
+.like-user-btn {
+  text-align: center;
+  font-weight: bold;
+}
+
+.like-user-btn:hover {
+  color: lightblue;
+}
+
+/* -----------------------------comment modal --------------------------------*/
+#comment-list {
+  padding: 10px;
+}
+
+.comment-user-btn {
+  font-weight: bold;
+}
+
+.comment-user-btn:hover {
+  color: lightblue;
+}
+
+#comment-content {
+  background-color: lightblue;
+}
+
+/* -----------------------------profile modal --------------------------------*/
+
+#warningModal {
+  z-index: 2000;
+}
+
+
+/* -----------------------------profile --------------------------------*/
+
+
+#profile-container {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+#profile-row-setting {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: #f5f5f5;
+  border-radius: 15px;
+  margin: 0px;
+  padding: 0px;
+  border: 5px solid;
+  border-color: hsl(210, 74%, 27%);
+}
+
+#profile-background-img {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  position: relative;
+  max-width: 100%;
+  max-height: 100%;
+
+}
+
+#button-for-change-profile {
+  position: absolute;
+  top: 50px;
+  right: 8%;
+  z-index: 1;
+  display: block;
+}
+
+
+#profile-img {
+  position: absolute;
+  left: 50px;
+  top: 35%;
+  width: calc(10vw + 9vh);
+  height: calc(10vw + 9vh);
+  border-radius: 50%;
+}
+
+
+.profile-text {
+  position: relative;
+  left: 70%;
+}
+
+#follow-btn {
+  display: none;
+}
+
+
+/* --------------profile item ----------------*/
+
+#profile-jobs-border {
+  border: 5px solid;
+  border-radius: 15px;
+  border-color: hsl(210, 74%, 27%);
+}
+
+
+.profile-jobs {
+  background-color: #f5f5f5;
+
+  justify-content: center;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: 100%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  margin-top: 10px;
+
+}
+
+.profile-title-item {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  text-align: center;
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  margin-top: 10px;
+  padding: 0px;
+
+}
+
+
+
+.profile-jobs-edit {
+  position: absolute;
+  top: 10px;
+  right: 10%;
+  z-index: 1;
+}
+
+.profile-jobs-detail {
+  font-size: 1em;
+}
+
+#profile_right_side {
+  align-items: center;
+  justify-content: center;
+}
+
+#profile_jobs_img_div {
+  display: flex;
+  position: relative;
+  height: 100%;
+  width: calc(height * 0.8);
+  justify-self: center;
+  align-items: center;
+}
+
+#profile_jobs_img {
+  max-width: 100%;
+
+}
+
+
+.profile-br::after {
+
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid black;
+  margin-top: 10px;
+}
+
+/* card comments likes  */
+
+
+.cursor:hover {
+  color: blue
+}
+
+.cursor {
+  cursor: pointer
+}
+
+.like {
+  display: flex;
+}

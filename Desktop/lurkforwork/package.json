@@ -1,0 +1,20 @@
+{
+  "name": "lurkforwork",
+  "version": "1.0.0",
+  "description": "1. Background & Motivation 2. The Task 3. Getting Started 4. Constraints & Assumptions 5. Marking Criteria 6. Originality of Work 7. Submission 8. Late Submission Policy",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "gitlab@gitlab.cse.unsw.EDU.AU:COMP6080/23T1/groups/FLUTTERATION/lurkforwork.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.0-alpha1",
+    "node": "^19.6.1"
+  }
+}

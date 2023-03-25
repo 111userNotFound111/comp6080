@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>LurkForWork</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- You can add your styles and scripts here -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <link rel="icon" href="img/icon.ico">
+    <!-- #0766c5 -->
+
+
+
+    <link rel="stylesheet" media="screen" href="styles/global.css" />
+</head>
+
+  
+<body class="d-flex flex-column h-100">
+    <!-- This is an example app structure, you can modify this as much as you choose -->
+    <header>
+        <div class="container">
+            <header
+                class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+                <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+                    <img src="img/LurkForWork.jpg" class="bi me-2" width="150" height="32" role="img">
+                </a>
+
+                <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 ">
+                    <li><a href="#" class="nav-link px-2 link-dark "><i
+                                class="fa fa-home d-flex justify-content-center"></i>Home</a></li>
+                    <li><a href="#" class="nav-link px-2 link-dark"><i
+                                class="fa-solid fa-network-wired d-flex justify-content-center"></i>My Network</a></li>
+                    <li><a href="#" class="nav-link px-2 link-dark"><i
+                                class="fa-solid fa-person-digging d-flex justify-content-center"></i>Jobs</a></li>
+                    <li><a href="#" class="nav-link px-2 link-dark"><i
+                                class="fa-solid fa-envelope d-flex justify-content-center"></i>Messaging</a></li>
+                    <li><a href="#" class="nav-link px-2 link-dark"><i
+                                class="fa-solid fa-bullhorn d-flex justify-content-center"></i>Notifications</a></li>
+                    <li class="nav-item dropdown"><a href="#" class="nav-link px-2 link-dark dropdown-toggle "
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false"><i
+                                class="fa-solid fa-address-card d-flex justify-content-center"></i>Me</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Setting</a></li>
+                            <li><a class="dropdown-item " href="#">View Profile</a></li>
+
+                            <li><a class="dropdown-item" href="#">Sign out</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+
+
+
+                <!-- <div class="col-md-3 text-end">
+                <button type="button" class="btn btn-outline-primary me-2">Login</button>
+                <button type="button" class="btn btn-primary">Sign-up</button>
+              </div> -->
+            </header>
+        </div>
+    </header>
+
+    <!-- profile -->
+    <main role="main" id="profile-main">
+        <!-- app goes here -->
+        <div class="container" id="profile-container">
+
+            <div id="profile-row-setting" class="d-flex flex-col">
+                <div class=" profile-col" id="profile-background-img">
+                    <i id="botton-for-change-profile-background-img" class="fa-solid fa-camera " type="button"></i>
+                    <img id="profile-background-img" src="img/profile-background-img-default.png">
+
+                </div>
+
+                <img id="profile-img" src="img/default-profile-portrait.jpeg">
+
+                <div id="profile-setting">
+                    <h1 class="profile-text" id="profile-name">abc</h1>
+                    <h2 class="profile-text" id="profile-headline">asdasdasd</h2>
+                    <h3 class="profile-text" id="profile-location">awd</h3>
+                    <h3 class="profile-text" id="profile-contact">contact</h3>
+
+                </div>
+                <i id="profile-text-edit" class="fa-solid fa-pen" type="button"></i>
+            </div>
+        </div>
+        <div class="container profile-item">
+            <div class="profile-type-item">
+                <h1 class="profile-type">type</h1>
+                <h5 class="profile-item-edit"><i  class="fa-solid fa-pen" type="button"></i></h5>
+            </div>
+            <br class="profile-br">
+
+            <div class="profile-item-detail">
+                <p>detail1</p>
+                <p>detail2</p>
+            </div>
+        </div>
+    </main>
+
+
+
+
+
+    <footer class="footer mt-auto py-3 bg-light">
+        <div class="container">
+            <span class="text-muted">Copyright: Team Of FLUTTERATION 2023</span>
+        </div>
+    </footer>
+
+    <script type="module" src="src/main.js"></script>
+
+    <script src="https://kit.fontawesome.com/c93deeb16c.js" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
+    </script>
+
+</body>
+
+</html>

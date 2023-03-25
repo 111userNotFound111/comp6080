@@ -1,0 +1,9 @@
+backend API:
+from backend folder :
+    npm install
+    npm start 
+
+frontend start server :
+from lurkfromwork :
+    $ npm install --global http-server
+    $ npx http-server frontend -c 1 -p [port]
