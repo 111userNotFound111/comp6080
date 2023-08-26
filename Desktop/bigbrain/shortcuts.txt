@@ -1,0 +1,8 @@
+quick fix :
+    npm run lint -- --fix
+
+install MUI :
+    npm install @mui/material @emotion/react @emotion/styled
+
+install react-dom :
+    yarn add react-router-dom
